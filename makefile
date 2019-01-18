@@ -21,3 +21,11 @@ stop:
 sh: stop
 	@echo "[Info] Run docker with sh"
 	@docker run -it --name sudoo-image-temp $(image_alpine_node_yarn_name) sh
+
+tag:
+	@echo "[Info] Tag image"
+	@docker tag $(image_alpine_node_yarn_name) sudoo/$(image_alpine_node_yarn_name)
+
+push:
+	@echo "[Info] Push image"
+	@docker push sudoo/$(image_alpine_node_yarn_name)
